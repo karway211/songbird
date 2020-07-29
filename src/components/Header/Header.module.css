@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logoImg {
+  width: 100%;
+}
+
+.score {
+  color: #ffffff;
+}

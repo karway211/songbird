@@ -1,0 +1,17 @@
+.navWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.navBth {
+  flex: auto;
+  text-align: center;
+  background-color: #008966;
+  padding: 10px 0;
+  color: #ffffff;
+}

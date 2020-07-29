@@ -1,0 +1,12 @@
+.nextBth {
+  width: 100%;
+  height: 35px;
+  background-color: #00bc8c;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 50px;
+}

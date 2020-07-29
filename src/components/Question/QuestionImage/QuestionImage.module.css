@@ -1,0 +1,14 @@
+.image {
+  margin-right: 40px;
+}
+
+.imageImg {
+  width: 200px;
+  height: 155px;
+}
+
+@media (max-width: 1024px) {
+  .image {
+    margin-right: 0;
+  }
+}

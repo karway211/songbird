@@ -1,0 +1,36 @@
+.answerOptions {
+  width: 100%;
+  background-color: #303030;
+  margin-right: 30px;
+}
+.choiceList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid #444444;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.choiceList:hover {
+  background-color: #444444;
+}
+
+.listItem {
+  height: 46px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+@media (max-width: 960px) {
+  .answerOptions {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
