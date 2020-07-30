@@ -8,7 +8,8 @@ const initialState = {
   questionId: Math.floor(Math.random() * 5) + 1,
   isResponse: null,
   score: 0,
-  counterScore: 5
+  counterScore: 5,
+  navigations: ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'],
 }
 
 const songbirdReducer = (state = initialState, action) => {
