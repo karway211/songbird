@@ -1,14 +1,15 @@
 import React from 'react';
 import s from './Header.module.css';
+import logo from '../../assets/image/logo.svg';
 
-const Header = () => {
+const Header = ({score}) => {
   return (
     <div className={s.header}>
       <div className={s.logo}>
-        <img src="https://birds-quiz.netlify.com/static/media/logo.4f82cd73.svg" className={s.logoImg} alt="logo"/>
+        <img src={logo} className={s.logoImg} alt="logo"/>
       </div>
       <div className={s.score}>
-        <span>Score: 0</span>
+        <span>Score: {score}</span>
       </div>
     </div>
   )

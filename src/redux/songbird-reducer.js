@@ -5,7 +5,7 @@ const initialState = {
   birds: null,
   isNext: false,
   choiceId: null,
-  questionId: null,
+  questionId: Math.floor(Math.random() * 5) + 1,
   isResponse: null,
   score: 0,
   counterScore: 5
