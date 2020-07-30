@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './QuestionImage.module.css';
 
-const QuestionImage = (props) => {
+const QuestionImage = ({photo}) => {
   return (
     <div className={s.image}>
-      <img src={props.photo} className={s.imageImg} alt='bird'/>
+      <img src={photo} className={s.imageImg} alt='bird'/>
     </div>
   );
 };

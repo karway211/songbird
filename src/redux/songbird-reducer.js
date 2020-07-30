@@ -17,7 +17,7 @@ const songbirdReducer = (state = initialState, action) => {
     case 'START_GAME_STATE': {
       return {
         ...state,
-        birds: action.birds,
+        birds: action.birds[state.counter],
       }
     }
     default: {
