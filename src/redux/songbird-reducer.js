@@ -4,7 +4,7 @@ const initialState = {
   counter: 0,
   birds: null,
   isNext: false,
-  choiceId: null,
+  optionId: null,
   questionId: Math.floor(Math.random() * 5) + 1,
   isResponse: null,
   score: 0,
@@ -20,6 +20,21 @@ const songbirdReducer = (state = initialState, action) => {
         birds: action.birds[state.counter],
       }
     }
+    case 'SET_OPTIONS': {
+      return {
+        ...state,
+        optionId: +action.id,
+        isResponse: state.questionId === +action.id || state.isResponse ? true : false,
+        isNext: state.questionId === +action.id || state.isResponse ? true : false,
+      }
+    }
+    case 'SET_COUNTER_SCORE': {
+      return {
+        ...state,
+        counterScore: (!state.isNext && state.counterScore > 1 && state.counterScore - 1) || (!state.isNext && state.counterScore),
+        score: (state.isNext && state.score + state.counterScore) || state.score,
+      }
+    }
     default: {
       return state;
     }
@@ -28,6 +43,8 @@ const songbirdReducer = (state = initialState, action) => {
 
 //ac
 const startGameState = (birds) => ({type: 'START_GAME_STATE', birds});
+export const setOptions = (id) => ({type: 'SET_OPTIONS', id});
+export const setCounterScore = () => ({type: 'SET_COUNTER_SCORE'});
 
 //thunk
 

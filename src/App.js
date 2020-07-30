@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import Choice from './components/Choice/Choice';
-import Answer from './components/Answer/Answer';
 import { startGame } from './redux/songbird-reducer';
 import { connect } from 'react-redux';
 import HeaderContainer from './components/Header/HeaderContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import QuestionContainer from './components/Question/QuestionContainer';
 import NextContainer from './components/Next/NextContainer';
+import AnswerContainer from './components/Answer/AnswerContainer';
+import OptionsBlockContainer from './components/OptionsBlock/OptionsBlockContainer';
 
 const App = ({startGame}) => {
   useEffect(() => {
@@ -20,8 +20,8 @@ const App = ({startGame}) => {
       <NavbarContainer />
       <QuestionContainer />
       <div className='wrap'>
-        <Choice />
-        <Answer />
+        <OptionsBlockContainer />
+        <AnswerContainer />
       </div>
       <NextContainer />
     </div>
