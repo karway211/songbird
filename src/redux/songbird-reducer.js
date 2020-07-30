@@ -1,3 +1,5 @@
+import birdsData from "../api/api";
+
 const initialState = {
   counter: 0,
   birds: null,
@@ -11,9 +13,26 @@ const initialState = {
 
 const songbirdReducer = (state = initialState, action) => {
   switch(action.type) {
+    case 'START_GAME_STATE': {
+      return {
+        ...state,
+        birds: action.birds,
+      }
+    }
     default: {
       return state;
     }
+  }
+}
+
+//ac
+const startGameState = (birds) => ({type: 'START_GAME_STATE', birds});
+
+//thunk
+
+export const startGame = () => {
+  return dispatch => {
+    dispatch(startGameState(birdsData));
   }
 }
 
