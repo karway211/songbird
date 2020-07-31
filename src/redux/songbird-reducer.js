@@ -31,8 +31,40 @@ const songbirdReducer = (state = initialState, action) => {
     case 'SET_COUNTER_SCORE': {
       return {
         ...state,
-        counterScore: (!state.isNext && state.counterScore > 1 && state.counterScore - 1) || (!state.isNext && state.counterScore),
+        counterScore: (!state.isNext && state.counterScore > 0) ? state.counterScore - 1 : !state.isNext ? state.counterScore : 0,
         score: (state.isNext && state.score + state.counterScore) || state.score,
+      }
+    }
+    case 'NEXT_LEVEL_AC': {
+      if(state.counter < 5) {
+        return {
+          ...state,
+          counter: state.counter + 1,
+          birds: birdsData[state.counter + 1],
+          isNext: false,
+          choiceId: null,
+          questionId: Math.floor(Math.random() * 5) + 1,
+          isResponse: null,
+          score: state.score,
+          counterScore: 5
+        }
+      } else if(state.counter === 5) {
+        return {
+          ...state,
+          counter: state.counter + 1,
+        }
+      } else {
+        return {
+          ...state,
+          counter: 0,
+          birds: birdsData[0],
+          isNext: false,
+          choiceId: null,
+          questionId: Math.floor(Math.random() * 5) + 1,
+          isResponse: null,
+          score: 0,
+          counterScore: 5,
+        }
       }
     }
     default: {
@@ -45,6 +77,7 @@ const songbirdReducer = (state = initialState, action) => {
 const startGameState = (birds) => ({type: 'START_GAME_STATE', birds});
 export const setOptions = (id) => ({type: 'SET_OPTIONS', id});
 export const setCounterScore = () => ({type: 'SET_COUNTER_SCORE'});
+export const nextLevelAC = () => ({type: 'NEXT_LEVEL_AC'});
 
 //thunk
 

@@ -5,6 +5,7 @@
 .imageImg {
   width: 200px;
   height: 155px;
+  object-fit: cover;
 }
 
 @media (max-width: 1024px) {

@@ -2,19 +2,6 @@ import React from 'react';
 import s from './Answer.module.css';
 import QuestionImage from '../Question/QuestionImage/QuestionImage';
 
-// const Answer = ({}) => {
-//   return (
-//     <div className={s.wrapper}>
-//       <p className={s.choose}>
-//         Послушайте плеер. <br/>
-//         Выберите птицу из списка
-//       </p>
-//     </div>
-//   )
-// }
-
-
-
 const Answer = ({ optionId, birds, counter, score }) => {
   if (optionId) {
     const currentData = birds[optionId - 1]
