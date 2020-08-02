@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Answer.module.css';
 import QuestionImage from '../Question/QuestionImage/QuestionImage';
+import AudioPlayer from '../common/AudioPlayer';
 
 const Answer = ({ optionId, birds, counter, score }) => {
   if (optionId) {
@@ -16,7 +17,8 @@ const Answer = ({ optionId, birds, counter, score }) => {
             <hr />
             <span className={s.questSpan}>{currentData.species}</span>
             <hr />
-            <audio src={currentData.audio} controls className={s.questAudio}></audio>
+            {/* <audio src={currentData.audio} controls className={s.questAudio}></audio> */}
+            <AudioPlayer audio={currentData.audio} />
           </div>
         </div>
         <p className={s.description}>{currentData.description}</p>
@@ -27,9 +29,9 @@ const Answer = ({ optionId, birds, counter, score }) => {
       <div className={s.wrapper}>
         <p className={s.choose}>
           {counter === 6
-            ? `Вы набрали ${score} из 36 баллов,
+            ? `Вы набрали ${score} из 30 баллов,
               кликните кнопку 'Next Level' чтобы начать игру сначала`
-            : 'Выберите один из вариантов ответа'}
+            : `Послушайте плеер. Выберите птицу из списка`}
         </p>
       </div>
     )

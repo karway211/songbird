@@ -10,10 +10,12 @@ const Next = ({isNext, location, setOptions, nextLevelAC}) => {
       setOptions(null);
     }
   }
-  return <NavLink 
+  return (
+  <NavLink 
             to={isNext ? '/' : `${location.pathname}`}
             className={isNext ? `${s.nextBth} ${s.action}` : s.nextBth }
             onClick={nextLevel}>Next Level </NavLink>
+            )
 }
 
 export default Next;

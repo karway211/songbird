@@ -10,7 +10,11 @@ const OptionsBlockContainer = (props) => {
 const mapStateToProps = state => ({
   birds: state.songbirdBlock.birds,
   isResponse: state.songbirdBlock.isResponse,
-  isNext: state.songbirdBlock.isNext
+  isNext: state.songbirdBlock.isNext,
+  optionId: state.songbirdBlock.optionId,
+  questionId: state.songbirdBlock.questionId,
+  optionsId: state.songbirdBlock.optionsId,
+  
 })
 
 export default connect(mapStateToProps, {setOptions, setCounterScore})(OptionsBlockContainer);

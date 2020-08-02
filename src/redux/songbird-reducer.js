@@ -5,6 +5,8 @@ const initialState = {
   birds: null,
   isNext: false,
   optionId: null,
+  optionsId: [],
+  isChangeOptions: null,
   questionId: Math.floor(Math.random() * 5) + 1,
   isResponse: null,
   score: 0,
@@ -24,6 +26,8 @@ const songbirdReducer = (state = initialState, action) => {
       return {
         ...state,
         optionId: +action.id,
+        optionsId: (!state.optionsId.includes(+action.id) && !state.isResponse && [...state.optionsId, +action.id]) || [...state.optionsId],
+        isChangeOptions: state.optionsId.includes(+action.id) ? false : true,
         isResponse: state.questionId === +action.id || state.isResponse ? true : false,
         isNext: state.questionId === +action.id || state.isResponse ? true : false,
       }
@@ -31,7 +35,7 @@ const songbirdReducer = (state = initialState, action) => {
     case 'SET_COUNTER_SCORE': {
       return {
         ...state,
-        counterScore: (!state.isNext && state.counterScore > 0) ? state.counterScore - 1 : !state.isNext ? state.counterScore : 0,
+        counterScore: (!state.isNext && state.counterScore > 0 && state.isChangeOptions ) ? state.counterScore - 1 : !state.isNext ? state.counterScore : 0,
         score: (state.isNext && state.score + state.counterScore) || state.score,
       }
     }
@@ -46,7 +50,10 @@ const songbirdReducer = (state = initialState, action) => {
           questionId: Math.floor(Math.random() * 5) + 1,
           isResponse: null,
           score: state.score,
-          counterScore: 5
+          counterScore: 5,
+          optionsId: [],
+          optionId: null,
+          isChangeOptions: null,
         }
       } else if(state.counter === 5) {
         return {
@@ -64,6 +71,9 @@ const songbirdReducer = (state = initialState, action) => {
           isResponse: null,
           score: 0,
           counterScore: 5,
+          optionsId: [],
+          optionId: null,
+          isChangeOptions: null,
         }
       }
     }
@@ -76,7 +86,7 @@ const songbirdReducer = (state = initialState, action) => {
 //ac
 const startGameState = (birds) => ({type: 'START_GAME_STATE', birds});
 export const setOptions = (id) => ({type: 'SET_OPTIONS', id});
-export const setCounterScore = () => ({type: 'SET_COUNTER_SCORE'});
+export const setCounterScore = (id) => ({type: 'SET_COUNTER_SCORE', id});
 export const nextLevelAC = () => ({type: 'NEXT_LEVEL_AC'});
 
 //thunk

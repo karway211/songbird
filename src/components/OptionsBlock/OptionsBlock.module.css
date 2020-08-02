@@ -31,11 +31,9 @@ a {
 
 .activeGold {
   color: gold;
-  background-color: #444444;
 }
 .activeRed {
   color: red;
-  background-color: #444444;
 }
 
 @media (max-width: 960px) {

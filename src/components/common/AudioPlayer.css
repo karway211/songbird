@@ -1,0 +1,74 @@
+.rhap_container {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  touch-action: none;
+}
+
+.rhap_progress-filled,
+.rhap_progress-indicator,
+.rhap_volume-indicator {
+  background-color: #008966;
+}
+.rhap_volume-controls {
+  justify-content: flex-start;
+}
+.rhap_controls-section {
+  flex: none;
+}
+.rhap_horizontal-reverse {
+  justify-content: start;
+}
+.rhap_button-clear,
+.rhap_volume-bar-area {
+  outline: none;
+}
+.rhap_main-controls {
+  position: relative;
+  z-index: 1;
+}
+.rhap_main-controls::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 1px solid #008966;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.rhap_progress-container {
+  height: initial;
+  outline: none;
+}
+
+.rhap_play-pause-button, .rhap_volume-button {
+  color: #008966;
+}
+.rhap_volume-bar {
+  width: 50px;
+}
+.rhap_volume-bar-area,
+.rhap_total-time,
+.rhap_additional-controls {
+  display: none;
+}
+
+.rhap_volume-controls:hover .rhap_volume-bar-area {
+  display: flex;
+  animation: vol .4s ease-in-out;
+}
+
+.rhap_time {
+  color: white;
+}
+
+.rhap_progress-bar {
+  background-color: white;
+}
+
+@keyframes vol {
+  0% { width: 0; }
+  100% { width: 50px; }
+}
