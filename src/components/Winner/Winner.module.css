@@ -1,0 +1,40 @@
+.winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #444444;
+  color: #fff;
+  padding: 100px 0;
+  border-radius: 10px;
+}
+.headline {
+  font-size: 60px;
+  padding: 0;
+  margin: 0;
+}
+
+.result {
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .result {
+    font-size: 20px;
+  }
+}
+@media (max-width: 420px) {
+  .winner {
+    padding: 80px 0;
+  }
+  .headline {
+    font-size: 48px;
+  }
+}
+@media (max-width: 360px) {
+  .winner {
+    padding: 50px 0;
+  }
+  .headline {
+    font-size: 42px;
+  }
+}

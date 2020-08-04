@@ -10,8 +10,9 @@ const NextContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-  isNext: state.songbirdBlock.isNext,
+  isResponse: state.songbirdBlock.isResponse,
   optionId: state.songbirdBlock.optionId,
+  counter: state.songbirdBlock.counter,
 })
 
 export default compose(

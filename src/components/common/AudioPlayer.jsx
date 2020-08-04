@@ -10,8 +10,8 @@ export default class AudioPlayer extends Component {
   }
 
   componentDidUpdate() {
-    const { isNext } = this.props;
-    if (isNext) {
+    const { isResponse } = this.props;
+    if (isResponse) {
       this.ref.audio.current.pause();
     }
   }

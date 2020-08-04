@@ -7,7 +7,7 @@ const AnswerContainer = (props) => {
 }
 
 const mapStateToProps = state => ({
-  birds: state.songbirdBlock.birds,
+  currentBirds: state.songbirdBlock.currentBirds,
   optionId: state.songbirdBlock.optionId,
   counter: state.songbirdBlock.counter,
   score: state.songbirdBlock.score

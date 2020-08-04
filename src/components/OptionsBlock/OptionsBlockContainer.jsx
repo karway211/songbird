@@ -8,12 +8,13 @@ const OptionsBlockContainer = (props) => {
 }
 
 const mapStateToProps = state => ({
-  birds: state.songbirdBlock.birds,
+  currentBirds: state.songbirdBlock.currentBirds,
   isResponse: state.songbirdBlock.isResponse,
-  isNext: state.songbirdBlock.isNext,
   optionId: state.songbirdBlock.optionId,
   questionId: state.songbirdBlock.questionId,
   optionsId: state.songbirdBlock.optionsId,
+  wrong: state.songbirdBlock.wrong,
+  right: state.songbirdBlock.right,
   
 })
 

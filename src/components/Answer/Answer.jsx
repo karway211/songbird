@@ -3,9 +3,9 @@ import s from './Answer.module.css';
 import QuestionImage from '../Question/QuestionImage/QuestionImage';
 import AudioPlayer from '../common/AudioPlayer';
 
-const Answer = ({ optionId, birds, counter, score }) => {
+const Answer = ({ optionId, currentBirds, counter, score }) => {
   if (optionId) {
-    const currentData = birds[optionId - 1]
+    const currentData = currentBirds[optionId - 1]
     return (
       <div className={s.wrapper}>
         <div className={s.answer}>
@@ -28,10 +28,11 @@ const Answer = ({ optionId, birds, counter, score }) => {
     return (
       <div className={s.wrapper}>
         <p className={s.choose}>
-          {counter === 6
+          {/* {counter === 6
             ? `Вы набрали ${score} из 30 баллов,
               кликните кнопку 'Next Level' чтобы начать игру сначала`
-            : `Послушайте плеер. Выберите птицу из списка`}
+            : `Послушайте плеер. Выберите птицу из списка`} */}
+            { `Послушайте плеер. Выберите птицу из списка`}
         </p>
       </div>
     )

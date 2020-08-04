@@ -2,19 +2,19 @@ import React from 'react';
 import s from './Next.module.css';
 import { NavLink } from 'react-router-dom';
 
-const Next = ({isNext, location, setOptions, nextLevelAC}) => {
-  console.log(location.pathname);
+const Next = ({isResponse, location, setOptions, nextLevelAC, counter}) => {
+
   const nextLevel = () => {
-    if(isNext) {
+    console.log(location.pathname);
+    if(isResponse) {
       nextLevelAC();
       setOptions(null);
     }
   }
   return (
-  <NavLink 
-            to={isNext ? '/' : `${location.pathname}`}
-            className={isNext ? `${s.nextBth} ${s.action}` : s.nextBth }
-            onClick={nextLevel}>Next Level </NavLink>
+  <NavLink to={counter===5 ? '/end' : isResponse ? '/game' : `${location.pathname}`}
+            className={isResponse ? `${s.nextBth} ${s.action}` : s.nextBth }
+            onClick={nextLevel}>{counter === 6 ? 'Try again' : 'Next Level'} </NavLink>
             )
 }
 
