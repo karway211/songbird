@@ -13,7 +13,7 @@ const initialState = {
   questionId: Math.floor(Math.random() * 5) + 1,
   isResponse: null,
   counterScore: 5,
-  navigations: ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'],
+  navigations: ['Воробьинообразные', 'Курообразные', 'Гусеобразные', 'Аистообразные', 'Совообразные', 'Соколообразные'],
   right: new Audio(audioRight),
   wrong: new Audio(audioWrong),
 }

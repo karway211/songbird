@@ -28,10 +28,6 @@ const Answer = ({ optionId, currentBirds, counter, score }) => {
     return (
       <div className={s.wrapper}>
         <p className={s.choose}>
-          {/* {counter === 6
-            ? `Вы набрали ${score} из 30 баллов,
-              кликните кнопку 'Next Level' чтобы начать игру сначала`
-            : `Послушайте плеер. Выберите птицу из списка`} */}
             { `Послушайте плеер. Выберите птицу из списка`}
         </p>
       </div>

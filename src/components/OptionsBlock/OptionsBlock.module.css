@@ -1,6 +1,5 @@
 .answerOptions {
   width: 100%;
-  /* background-color: #303030; */
   margin-right: 30px;
 }
 .choiceList {
@@ -8,8 +7,18 @@
   justify-content: center;
   align-items: center;
   background-color: #303030;
-  outline: 1px solid #444444;
+  box-sizing: border-box;
+  border: 1px solid #444444;
+  border-bottom: none;
   cursor: pointer;
+}
+
+.choiceList:first-child {
+  border-radius: 5px 5px 0 0;
+}
+.choiceList:last-child {
+  border-radius: 0 0 5px 5px;
+  border-bottom: 1px solid #444444;
 }
 
 a {

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  padding: 0 20px;
+  padding: 20px 20px 0;
 }
 
 .logo {
@@ -13,7 +13,9 @@
 }
 
 .logoImg {
+  display: block;
   width: 100%;
+  padding: 0;
 }
 
 .score {
