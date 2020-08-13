@@ -14,8 +14,8 @@ const initialState = {
   isResponse: null,
   counterScore: 5,
   navigations: ['Воробьинообразные', 'Курообразные', 'Гусеобразные', 'Аистообразные', 'Совообразные', 'Соколообразные'],
-  right: new Audio(audioRight),
-  wrong: new Audio(audioWrong),
+  right: null,
+  wrong: null,
 }
 
 const songbirdReducer = (state = initialState, action) => {
@@ -23,8 +23,10 @@ const songbirdReducer = (state = initialState, action) => {
     case 'START_GAME_STATE': {
       return {
         ...state,
-        birds: action.birds,
-        currentBirds: action.birds[state.counter],
+        birds: action.startData.birds,
+        currentBirds: action.startData.birds[state.counter],
+        right: action.startData.right,
+        wrong: action.startData.wrong,
       }
     }
     case 'SET_OPTIONS': {
@@ -88,7 +90,7 @@ const songbirdReducer = (state = initialState, action) => {
 }
 
 //ac
-const startGameState = (birds) => ({type: 'START_GAME_STATE', birds});
+const startGameState = (birds, right, wrong) => ({type: 'START_GAME_STATE', startData: {birds, right, wrong}});
 export const setOptions = (id) => ({type: 'SET_OPTIONS', id});
 export const setCounterScore = (id) => ({type: 'SET_COUNTER_SCORE', id});
 export const nextLevelAC = () => ({type: 'NEXT_LEVEL_AC'});
@@ -97,7 +99,7 @@ export const nextLevelAC = () => ({type: 'NEXT_LEVEL_AC'});
 
 export const startGame = () => {
   return dispatch => {
-    dispatch(startGameState(birdsData));
+    dispatch(startGameState(birdsData, new Audio(audioRight), new Audio(audioWrong)));
   }
 }
 
