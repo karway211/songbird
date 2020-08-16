@@ -10,7 +10,9 @@ type PropsType = {
 const Winner: React.FC<PropsType> = ({score}) => (
   <div className={s.winner}>
     <h2 className={s.headline}>Поздравляем!</h2>
-    <p className={s.result}>Вы прошли викторину и набрали {score} из 30 возможных баллов</p>
+    <p className={s.result}>{score === 30 
+          ? `${score} из 30!!! Теперь ты знаешь кто чирикнул :)`
+          :`Вы прошли викторину и набрали ${score} из 30 возможных баллов`}</p>
   </div>
 )
 
