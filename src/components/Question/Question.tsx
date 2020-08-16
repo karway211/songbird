@@ -18,7 +18,7 @@ const Question: React.FC<PropsType> = ({birdsData, questionId, isResponse}) => {
     <div className={s.quest}>
       <BirdsImage photo = { isResponse && birdsData ? birdsData[randomNumber].image : birdPhoto } />
       <div className={s.questControl}>
-      <span className={s.questSpan}>{ isResponse && birdsData ? birdsData[randomNumber].name : '-----'}</span>
+      <span className={s.questSpan}>{ isResponse && birdsData ? birdsData[randomNumber].name : '*****'}</span>
         <hr />
         <AudioPlayer isResponse={isResponse} audio={ birdsData ? birdsData[randomNumber].audio: '' } />
       </div>
