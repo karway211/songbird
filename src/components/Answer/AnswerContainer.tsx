@@ -1,12 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Answer from './Answer';
+import { AppStateType } from '../../redux/redux-store';
 
-const AnswerContainer = (props) => {
+type MapPropsType = ReturnType<typeof mapStateToProps>
+
+const AnswerContainer: React.FC<MapPropsType> = (props) => {
   return <Answer {...props} />
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppStateType) => ({
   currentBirds: state.songbirdBlock.currentBirds,
   optionId: state.songbirdBlock.optionId,
   counter: state.songbirdBlock.counter,

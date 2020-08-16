@@ -301,6 +301,8 @@ const birdsData = [
   ],
   
 ];
+
+export type birdsDataType = typeof birdsData;
 // const birdsData = [
 //   [       
 //     {

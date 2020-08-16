@@ -1,23 +1,28 @@
 import React from 'react';
 import s from './Answer.module.css';
-import QuestionImage from '../Question/QuestionImage/QuestionImage';
 import AudioPlayer from '../common/AudioPlayer';
+import { BirdsDataElemType } from '../../types/types';
+import BirdsImage from '../common/BirdsImage/BirdsImage';
 
-const Answer = ({ optionId, currentBirds, counter, score }) => {
-  if (optionId) {
+type PropsType = {
+  optionId: null | number
+  currentBirds: Array<BirdsDataElemType> | null
+}
+
+const Answer: React.FC<PropsType> = ({ optionId, currentBirds }) => {
+  if (optionId && currentBirds) {
     const currentData = currentBirds[optionId - 1]
     return (
       <div className={s.wrapper}>
         <div className={s.answer}>
           <div className={s.imageBlock}>
-            <QuestionImage photo = {currentData.image} />
+            <BirdsImage photo = {currentData.image} />
           </div>
           <div className={s.answerControl}>
             <span className={s.questSpan}>{currentData.name}</span>
             <hr />
             <span className={s.questSpan}>{currentData.species}</span>
             <hr />
-            {/* <audio src={currentData.audio} controls className={s.questAudio}></audio> */}
             <AudioPlayer audio={currentData.audio} />
           </div>
         </div>

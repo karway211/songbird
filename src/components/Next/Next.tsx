@@ -2,7 +2,17 @@ import React from 'react';
 import s from './Next.module.css';
 import { NavLink } from 'react-router-dom';
 
-const Next = ({isResponse, location, setOptions, nextLevelAC, counter}) => {
+type PropsType = {
+  isResponse: null | boolean,
+  location: {
+    pathname: string
+  }
+  setOptions: (id: number | null ) => void
+  nextLevelAC: () => void
+  counter: number
+}
+
+const Next: React.FC<PropsType> = ({isResponse, location, setOptions, nextLevelAC, counter}) => {
 
   const nextLevel = () => {
     console.log(location.pathname);

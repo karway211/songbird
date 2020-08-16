@@ -1,21 +1,18 @@
 import React from 'react';
 import Next from './Next';
 import { connect } from 'react-redux';
-import { setOptions, nextLevelAC } from '../../redux/songbird-reducer';
+import { actions } from '../../redux/songbird-reducer';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { AppStateType } from '../../redux/redux-store';
 
-const NextContainer = (props) => {
-  return <Next {...props} />
-}
-
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: AppStateType) => ({
   isResponse: state.songbirdBlock.isResponse,
   optionId: state.songbirdBlock.optionId,
   counter: state.songbirdBlock.counter,
 })
 
-export default compose(
-  connect(mapStateToProps, {setOptions, nextLevelAC}),
+export default compose<React.ComponentType>(
+  connect(mapStateToProps, {...actions}),
   withRouter,
-)(NextContainer);
+)(Next);

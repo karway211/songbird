@@ -1,11 +1,9 @@
 import React from 'react';
-import HeaderContainer from '../Header/HeaderContainer';
-import NavbarContainer from '../Navbar/NavbarContainer';
 import QuestionContainer from '../Question/QuestionContainer';
 import OptionsBlockContainer from '../OptionsBlock/OptionsBlockContainer';
 import AnswerContainer from '../Answer/AnswerContainer';
 
-const Game = () => {
+const Game: React.FC = () => {
 
   return (
     <div className="Game">
