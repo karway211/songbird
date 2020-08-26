@@ -14,6 +14,7 @@ type PropsType = {
 const Question: React.FC<PropsType> = ({birdsData, questionId, isResponse}) => {
   
   const randomNumber = questionId - 1;
+  birdsData && console.log(birdsData[randomNumber].name);
   return (
     <div className={s.quest}>
       <BirdsImage photo = { isResponse && birdsData ? birdsData[randomNumber].image : birdPhoto } />

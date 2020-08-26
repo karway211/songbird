@@ -15,7 +15,7 @@ type PropsType = {
 const Next: React.FC<PropsType> = ({isResponse, location, setOptions, nextLevelAC, counter}) => {
 
   const nextLevel = () => {
-    console.log(location.pathname);
+    // console.log(location.pathname);
     if(isResponse) {
       nextLevelAC();
       setOptions(null);
