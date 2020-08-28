@@ -1,0 +1,88 @@
+.wrapper {
+  background-color: #303030;
+  /* margin-bottom: 25px; */
+  color: #ffffff;
+  width: 100%;
+  padding: 16px;
+  border-radius: 5px;
+}
+
+.wrapper .choose {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.answer {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  
+}
+
+.answerControl {
+  width: 100%;
+}
+
+.answerSpan {
+  display: inline-block;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: none;
+  color: #444444;
+  background-color: #444444;
+  height: 1px;
+}
+
+.questAudio {
+  width: 100%;
+  height: 30px;
+  outline: none;
+}
+
+.questAudio::-webkit-media-controls-panel {
+  background-color: #008966;
+  height: 30px;
+}
+.questAudio::-webkit-media-controls-current-time-display {
+  display: none;
+}
+
+.questAudio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+
+.description {
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .quest {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .answerControl {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .answer {
+    flex-wrap: wrap;
+  }
+  .imageBlock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

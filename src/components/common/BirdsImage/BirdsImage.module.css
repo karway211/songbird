@@ -1,0 +1,17 @@
+.image {
+  margin-right: 40px;
+  border-radius: 5px;
+}
+
+.imageImg {
+  width: 200px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+  .image {
+    margin-right: 0;
+  }
+}
